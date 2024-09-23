@@ -9,7 +9,8 @@ pipeline {
                 sh '''
                     ls -ltr
                     pwd
-                    echo 'this is command sections to view'
+                    echo 'this is to test the github webhook events if any changes happen in github automatically pipeline will trigger'
+                    
 
                 '''
             }
