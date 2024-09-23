@@ -6,6 +6,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building....'
+                sh '''
+                    ls -ltr
+                    pwd
+                    echo 'this is command sections to view'
+
+                '''
             }
         }
         stage('Test') {
