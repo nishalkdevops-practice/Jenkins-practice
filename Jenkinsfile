@@ -16,6 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                error 'this is failed'
             }
         }
     }
@@ -24,7 +25,7 @@ pipeline {
         always {
             echo 'I will always run weather job is success or not'
         }
-        
+
         success{
             echo 'I will run only when job is success'
             
