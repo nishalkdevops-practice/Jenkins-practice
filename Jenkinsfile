@@ -1,7 +1,7 @@
 pipeline {
     agent { node { label 'Agent-1' } }
     options {
-        timeout(time: 1, unit: 'Hours')
+        timeout(time: 1, unit: 'HOURS')
     }
     environment {
         USER = 'Nishal'
