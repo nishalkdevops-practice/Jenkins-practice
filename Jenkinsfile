@@ -100,7 +100,14 @@ pipeline {
             }
         }
 
-        
+        stage {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'deploying to the prod'
+            }
+        }
     }
 
     post {
