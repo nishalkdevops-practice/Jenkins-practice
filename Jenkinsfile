@@ -39,6 +39,18 @@ pipeline {
                 //error 'this is failed'
             }
         }
+
+        stage('Validation') {
+            environment {
+                AUTH = credentials('ssh-auth')
+            }
+
+            steps {
+                sh 'printenv'
+            }
+            
+            }
+        }
     }
 
     post {
