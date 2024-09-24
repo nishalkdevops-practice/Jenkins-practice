@@ -100,7 +100,7 @@ pipeline {
             }
         }
 
-        stage {
+        stage('Prod deploy') {
             when {
                 branch 'master'
             }
