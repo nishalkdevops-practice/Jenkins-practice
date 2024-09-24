@@ -1,5 +1,11 @@
 pipeline {
     agent { node { label 'Agent-1' } }
+    options {
+        timeout(time: 1, unit: 'Hours')
+    }
+    environment {
+        USER = 'Nishal'
+    }
 
 
     stages {
@@ -10,7 +16,7 @@ pipeline {
                     ls -ltr
                     pwd
                     echo 'this is to test the github webhook events if any changes happen in github automatically pipeline will trigger'
-                    
+                    printenv
 
                 '''
             }
