@@ -4,9 +4,9 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
     }
 
-    triggers {
-        cron('* * * * *')
-    }
+    // triggers {
+    //     cron('* * * * *')
+    // }
 
 
     environment {
@@ -84,9 +84,21 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
             }
         }
-    
 
-        
+        stage('Approval') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "Nishal"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+        }
+
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
     }
 
     post {
